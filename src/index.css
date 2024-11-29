@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .glow-effect {
+      text-shadow: 0 0 4px #caf12d, 0 0 8px #eaff4b, 0 0 12px #f0ff85;
+      animation: green-pulse 2s infinite ease-in-out;
+    }
+
+    .glow-on-hover {
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+      }
+    
+      .glow-on-hover:hover {
+        box-shadow: 0 0 15px 5px rgba(202, 241, 45, 0.8), 
+                    0 0 25px 10px rgba(202, 241, 45, 0.5); 
+        transform: translateY(-5px); 
+      }
+  
+    @keyframes green-pulse {
+      0%, 100% {
+        text-shadow: 0 0 4px #caf12d, 0 0 8px #eaff4b, 0 0 12px #f0ff85;
+      }
+      50% {
+        text-shadow: 0 0 2px #caf12d, 0 0 6px #eaff4b, 0 0 10px #f0ff85;
+      }
+    }
+  }
